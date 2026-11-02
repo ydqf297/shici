@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Shici" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorOnPrimary">@color/paper</item>
+        <item name="colorPrimaryContainer">@color/green_soft</item>
+        <item name="colorOnPrimaryContainer">@color/green_dark</item>
+        <item name="colorSecondary">@color/amber</item>
+        <item name="colorOnSecondary">@color/hero_on_accent</item>
+        <item name="colorSecondaryContainer">@color/amber_soft</item>
+        <item name="colorOnSecondaryContainer">@color/amber_dark</item>
+        <item name="colorTertiary">@color/amber</item>
+        <item name="colorOnTertiary">@color/hero_on_accent</item>
+        <item name="android:colorBackground">@color/paper</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/ink</item>
+        <item name="colorSurfaceVariant">@color/surface_alt</item>
+        <item name="colorOnSurfaceVariant">@color/ink_secondary</item>
+        <item name="colorSurfaceContainerLowest">@color/surface</item>
+        <item name="colorSurfaceContainerLow">@color/surface</item>
+        <item name="colorSurfaceContainer">@color/surface</item>
+        <item name="colorSurfaceContainerHigh">@color/surface</item>
+        <item name="colorSurfaceContainerHighest">@color/surface_alt</item>
+        <item name="colorSurfaceBright">@color/surface</item>
+        <item name="colorSurfaceDim">@color/surface_alt</item>
+        <item name="colorOutline">@color/line_strong</item>
+        <item name="colorOutlineVariant">@color/line</item>
+        <item name="colorError">@color/error</item>
+        <item name="android:windowBackground">@color/paper</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="fontFamily">sans-serif</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.Shici.AlertDialog</item>
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.Shici.BottomSheet</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="ThemeOverlay.Shici.AlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorSurfaceContainerHigh">@color/surface</item>
+        <item name="colorSurfaceContainerHighest">@color/surface</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Shici.Dialog</item>
+    </style>
+
+    <style name="ThemeOverlay.Shici.BottomSheet" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.Shici.BottomSheet</item>
+    </style>
+
+    <style name="Widget.Shici.BottomSheet" parent="Widget.MaterialComponents.BottomSheet.Modal">
+        <item name="backgroundTint">@color/surface</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Shici.Sheet</item>
+    </style>
+
+    <style name="ShapeAppearance.Shici.Sheet" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">28dp</item>
+        <item name="cornerSizeTopRight">28dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Shici.Dialog" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">26dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Shici.Circle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>

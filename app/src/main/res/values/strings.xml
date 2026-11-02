@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">拾词</string>
+    <string name="decorative_aa" translatable="false">Aa</string>
+    <string name="zero" translatable="false">0</string>
+    <string name="index_placeholder" translatable="false">01</string>
+    <string name="phonetic_slash" translatable="false">/%1$s/</string>
+    <string name="source_date">%1$s   ·   %2$s</string>
+    <string name="app_tagline">读懂每一个词</string>
+    <string name="brand_mark">拾词标志</string>
+
+    <string name="hero_eyebrow">READ · TAP · GROW</string>
+    <string name="hero_title">把阅读，\n变成你的词汇量。</string>
+    <string name="hero_subtitle">导入任意英文短文，轻点生词。音标、释义、词形与原文语境，随手可得。</string>
+    <string name="hero_import">导入一篇短文</string>
+    <string name="hero_articles">篇文章</string>
+    <string name="hero_words">个生词</string>
+
+    <string name="my_reading">我的阅读</string>
+    <string name="library_count">共 %1$d 篇</string>
+    <string name="wordbook">生词本</string>
+    <string name="wordbook_short">词本</string>
+    <string name="sample_badge">示例</string>
+    <string name="article_read">轻点开始精读</string>
+    <string name="article_menu">短文操作</string>
+    <string name="article_menu_delete">删除短文</string>
+    <string name="delete_title">删除这篇短文？</string>
+    <string name="delete_message">《%1$s》会从书架移除，生词本中收藏的单词会保留。</string>
+    <string name="cancel">取消</string>
+    <string name="delete">删除</string>
+    <string name="delete_failed">删除失败，请重试</string>
+
+    <string name="untitled_article">未命名短文</string>
+    <string name="generic_error">出了点小问题，请再试一次</string>
+    <string name="article_gone">这篇短文已经不在了</string>
+    <string name="empty_title">书架还是空的</string>
+    <string name="empty_subtitle">导入一段英文，开始你的第一篇精读。</string>
+    <string name="empty_sample">先读一篇示例</string>
+    <string name="empty_import">导入第一篇短文</string>
+
+    <string name="import_title">导入短文</string>
+    <string name="import_eyebrow">NEW READING</string>
+    <string name="import_subtitle">把喜欢的英文带进来，剩下的交给拾词。</string>
+    <string name="title_label">标题</string>
+    <string name="title_hint">可选，留空会从正文自动生成</string>
+    <string name="passage_label">英文短文</string>
+    <string name="passage_hint">在这里粘贴，或输入一段英文…</string>
+    <string name="import_paste">粘贴</string>
+    <string name="import_txt">导入 TXT</string>
+    <string name="import_sample">填入示例</string>
+    <string name="import_save">保存到书架</string>
+    <string name="import_privacy">短文只保存在这台设备上，不会上传。支持 .txt 文本文件。</string>
+    <string name="word_count">%1$d 词</string>
+    <string name="word_count_zero">0 词</string>
+    <string name="pasted">已粘贴剪贴板内容</string>
+    <string name="clipboard_empty">剪贴板里没有文字</string>
+    <string name="undo">撤销</string>
+    <string name="txt_too_large">文件太大了，请选择 1 MB 以内的纯文本</string>
+    <string name="txt_read_failed">读取 TXT 失败，请换一个 UTF-8 编码的文件</string>
+    <string name="txt_loaded">已导入《%1$s》</string>
+    <string name="empty_passage">先粘贴或输入一段英文吧</string>
+    <string name="empty_words">正文里没有找到英文单词</string>
+    <string name="text_too_long">短文太长了，请分成多篇导入（约 8 万字符以内）</string>
+    <string name="saved_to_library">已保存到书架</string>
+    <string name="save_failed">保存失败，请重试</string>
+    <string name="discard_title">放弃这次编辑？</string>
+    <string name="discard_message">还没保存的内容会消失。</string>
+    <string name="keep_editing">继续编辑</string>
+    <string name="discard">放弃</string>
+
+    <string name="reader_label">精读</string>
+    <string name="reading_eyebrow">READING</string>
+    <string name="reading_meta">READING  ·  %1$d WORDS</string>
+    <string name="reader_menu">更多操作</string>
+    <string name="reader_tip">轻点文中任意单词，查看音标、释义与例句</string>
+    <string name="read_time">约 %1$d 分钟</string>
+    <string name="reader_end">读到这里了</string>
+    <string name="reader_end_sub">每一个点开的词，都算数。</string>
+    <string name="reader_font_size">调整字号</string>
+    <string name="share_article">分享短文</string>
+    <string name="font_size_title">阅读字号</string>
+    <string name="font_size_preview">A quiet word can open a whole world.</string>
+    <string name="font_size_small">小</string>
+    <string name="font_size_medium">标准</string>
+    <string name="font_size_large">大</string>
+    <string name="font_size_xlarge">特大</string>
+    <string name="done">完成</string>
+    <string name="about_dictionary">离线词库</string>
+    <string name="about_dictionary_title">关于离线词库</string>
+    <string name="about_dictionary_text">拾词内置约 40 万条英文词条，无需联网即可查询。\n\n词典数据来自 ECDICT（MIT License），英文释义源自 WordNet 等公开词典数据；语音由设备内置的英文 TTS 引擎朗读。\n\n词库在首次查词时会自动准备，之后完全离线可用。</string>
+    <string name="dictionary_credit">离线词库 · ECDICT</string>
+
+    <string name="wordbook_title">生词本</string>
+    <string name="wordbook_eyebrow">MY WORDS</string>
+    <string name="wordbook_subtitle">从读过的文章里，一点点收进来。</string>
+    <string name="wordbook_count">%1$d 个词</string>
+    <string name="search_words">搜索生词</string>
+    <string name="no_results">没有找到匹配的生词</string>
+    <string name="search_no_results_subtitle">换一个关键词试试，或者去读一篇新的短文。</string>
+    <string name="wordbook_empty_title">还没有生词</string>
+    <string name="wordbook_empty_subtitle">阅读时点开任意单词，点右上角的书签，就能把它收进这里。</string>
+    <string name="go_reading">去读一篇</string>
+    <string name="added_word">已加入生词本</string>
+    <string name="removed_word">已移出生词本</string>
+    <string name="save_word_failed">操作失败，请重试</string>
+    <string name="saved_from">来自《%1$s》</string>
+    <string name="saved_manually">手动收藏</string>
+    <string name="remove_word_title">移出这个单词？</string>
+    <string name="remove_word_message">“%1$s”会从生词本移除，之后仍可重新收藏。</string>
+    <string name="remove">移除</string>
+
+    <string name="lookup_loading">正在查词…</string>
+    <string name="preparing_dictionary">正在准备离线词库…</string>
+    <string name="meaning">释义</string>
+    <string name="english_definition">英文释义</string>
+    <string name="word_forms">词形变化</string>
+    <string name="context">原文语境</string>
+    <string name="tags">标签</string>
+    <string name="speak_word">朗读单词</string>
+    <string name="save_to_wordbook">加入生词本</string>
+    <string name="saved_to_wordbook">已收藏</string>
+    <string name="remove_from_wordbook">移出生词本</string>
+    <string name="base_form">原文词形 · %1$s</string>
+    <string name="not_found">词库中暂未收录“%1$s”</string>
+    <string name="not_found_hint">专有名词、缩写或新词可能没有收录。你可以换一个词试试，或继续阅读。</string>
+    <string name="loading_short">正在加载…</string>
+    <string name="retry">重试</string>
+    <string name="dictionary_error">词库准备失败，请重启应用后再试</string>
+    <string name="tts_unavailable">没有找到可用的英文语音引擎</string>
+    <string name="tts_failed">暂时无法朗读，请稍后再试</string>
+
+    <string name="tag_zk">中考</string>
+    <string name="tag_gk">高考</string>
+    <string name="tag_cet4">CET-4</string>
+    <string name="tag_cet6">CET-6</string>
+    <string name="tag_ky">考研</string>
+    <string name="tag_toefl">TOEFL</string>
+    <string name="tag_ielts">IELTS</string>
+    <string name="tag_gre">GRE</string>
+    <string name="tag_oxford">牛津核心</string>
+    <string name="tag_collins">柯林斯 %1$s</string>
+    <string name="frequency_high">高频词</string>
+    <string name="frequency_mid">常用词</string>
+    <string name="frequency_low">进阶词</string>
+
+    <string name="form_s">复数</string>
+    <string name="form_p">过去式</string>
+    <string name="form_d">过去分词</string>
+    <string name="form_i">现在分词</string>
+    <string name="form_3">第三人称单数</string>
+    <string name="form_r">比较级</string>
+    <string name="form_t">最高级</string>
+    <string name="form_lemma">原形</string>
+    <string name="form_other">词形</string>
+
+    <string name="no_meanings">暂无中文释义</string>
+    <string name="no_definition">暂无英文释义</string>
+    <string name="close">关闭</string>
+    <string name="back">返回</string>
+    <string name="share">分享</string>
+    <string name="share_chooser">分享短文</string>
+</resources>

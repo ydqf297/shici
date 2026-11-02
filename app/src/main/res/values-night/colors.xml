@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="paper">#101612</color>
+    <color name="surface">#171F1A</color>
+    <color name="surface_alt">#1F2A23</color>
+    <color name="ink">#EFF2EC</color>
+    <color name="ink_secondary">#AAB6AC</color>
+    <color name="ink_tertiary">#849087</color>
+    <color name="line">#2B362E</color>
+    <color name="line_strong">#3A493F</color>
+
+    <color name="green">#8ED4B1</color>
+    <color name="green_dark">#C3ECD7</color>
+    <color name="green_soft">#21362B</color>
+    <color name="green_ink">#A8DDC2</color>
+
+    <color name="amber">#ECAD78</color>
+    <color name="amber_dark">#F4C59D</color>
+    <color name="amber_soft">#36291E</color>
+
+    <color name="error">#F2B8B5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="hero_start">#235440</color>
+    <color name="hero_end">#102E22</color>
+    <color name="hero_text">#F9F5E9</color>
+    <color name="hero_muted">#C9D9CF</color>
+    <color name="hero_accent">#E7A76C</color>
+    <color name="hero_on_accent">#173326</color>
+    <color name="hero_hairline">#33FFFFFF</color>
+
+    <color name="highlight_word">#3D8ED4B1</color>
+    <color name="highlight_word_context">#55ECAD78</color>
+    <color name="ripple_light">#33FFFFFF</color>
+    <color name="scrim">#99000000</color>
+
+    <color name="icon_background">#1E4D3A</color>
+</resources>

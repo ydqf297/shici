@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Shici.Button.Primary" parent="Widget.Material3.Button">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="backgroundTint">@color/green</item>
+        <item name="android:textColor">@color/paper</item>
+        <item name="iconTint">@color/paper</item>
+        <item name="iconPadding">8dp</item>
+        <item name="iconSize">20dp</item>
+        <item name="rippleColor">@color/ripple_light</item>
+    </style>
+
+    <style name="Widget.Shici.Button.Hero" parent="Widget.Material3.Button">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="backgroundTint">@color/hero_accent</item>
+        <item name="android:textColor">@color/hero_on_accent</item>
+        <item name="iconTint">@color/hero_on_accent</item>
+        <item name="iconPadding">8dp</item>
+        <item name="iconSize">20dp</item>
+        <item name="rippleColor">#33173326</item>
+    </style>
+
+    <style name="Widget.Shici.Button.Tonal" parent="Widget.Material3.Button.TonalButton">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:minHeight">42dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="backgroundTint">@color/green_soft</item>
+        <item name="android:textColor">@color/green_dark</item>
+        <item name="iconTint">@color/green_dark</item>
+        <item name="iconPadding">6dp</item>
+        <item name="iconSize">18dp</item>
+    </style>
+
+    <style name="Widget.Shici.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textColor">@color/green</item>
+        <item name="iconTint">@color/green</item>
+        <item name="iconPadding">6dp</item>
+        <item name="iconSize">18dp</item>
+    </style>
+
+    <style name="Widget.Shici.Chip" parent="Widget.Material3.Chip.Assist">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/green_dark</item>
+        <item name="chipBackgroundColor">@color/green_soft</item>
+        <item name="chipStrokeWidth">0dp</item>
+        <item name="chipMinHeight">28dp</item>
+        <item name="chipStartPadding">9dp</item>
+        <item name="chipEndPadding">9dp</item>
+        <item name="chipIconVisible">false</item>
+        <item name="checkedIconVisible">false</item>
+        <item name="ensureMinTouchTargetSize">false</item>
+        <item name="chipCornerRadius">100dp</item>
+        <item name="rippleColor">@color/transparent</item>
+    </style>
+
+    <style name="Widget.Shici.Chip.Amber" parent="Widget.Shici.Chip">
+        <item name="android:textColor">@color/amber_dark</item>
+        <item name="chipBackgroundColor">@color/amber_soft</item>
+    </style>
+
+    <style name="TextAppearance.Shici.Eyebrow" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.18</item>
+        <item name="android:textColor">@color/amber</item>
+    </style>
+
+    <style name="TextAppearance.Shici.SectionLabel" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.12</item>
+        <item name="android:textColor">@color/ink_tertiary</item>
+    </style>
+
+    <style name="TextAppearance.Shici.Section" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textSize">19sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+</resources>
