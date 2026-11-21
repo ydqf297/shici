@@ -21,10 +21,11 @@
     <string name="wordbook">生词本</string>
     <string name="wordbook_short">词本</string>
     <string name="sample_badge">示例</string>
+    <string name="analysis_badge">句子解析</string>
     <string name="article_read">轻点开始精读</string>
-    <string name="article_menu">短文操作</string>
-    <string name="article_menu_delete">删除短文</string>
-    <string name="delete_title">删除这篇短文？</string>
+    <string name="article_menu">内容操作</string>
+    <string name="article_menu_delete">删除这篇内容</string>
+    <string name="delete_title">删除这篇内容？</string>
     <string name="delete_message">《%1$s》会从书架移除，生词本中收藏的单词会保留。</string>
     <string name="cancel">取消</string>
     <string name="delete">删除</string>
@@ -32,15 +33,32 @@
 
     <string name="untitled_article">未命名短文</string>
     <string name="generic_error">出了点小问题，请再试一次</string>
-    <string name="article_gone">这篇短文已经不在了</string>
+    <string name="article_gone">这篇内容已经不在了</string>
     <string name="empty_title">书架还是空的</string>
     <string name="empty_subtitle">导入一段英文，开始你的第一篇精读。</string>
     <string name="empty_sample">先读一篇示例</string>
     <string name="empty_import">导入第一篇短文</string>
 
-    <string name="import_title">导入短文</string>
-    <string name="import_eyebrow">NEW READING</string>
-    <string name="import_subtitle">把喜欢的英文带进来，剩下的交给拾词。</string>
+    <string name="import_title">导入内容</string>
+    <string name="import_eyebrow">NEW MATERIAL</string>
+    <string name="import_subtitle">导入一篇短文，或粘贴带解析的文本，剩下的交给拾词。</string>
+    <string name="import_kind_label">内容类型</string>
+    <string name="import_mode_reading">英语短文</string>
+    <string name="import_mode_analysis">句子解析</string>
+    <string name="import_mode_reading_hint">粘贴任意英文短文。保存后轻点单词，即可查看音标、释义和原文语境。</string>
+    <string name="import_mode_analysis_hint">按“英语短文 → 原句 → 拆解 → 翻译 → 语法提示”的格式粘贴，自动生成逐句卡片。</string>
+    <string name="analysis_format_link">解析格式</string>
+    <string name="analysis_format_title">句子解析格式</string>
+    <string name="analysis_format_message">用 Markdown 标题分成两段：\n\n### 英语短文\n粘贴英文原文。\n\n### 解析\n每一句用 #### 1. 原句 开头，下面依次写：\n\n* **逐词/短语拆解**：\n    * 英文片段（中文释义）\n* **中文翻译**：这一句的译文\n* **语法与用法提示**：\n    * 用 `反引号` 标出重点词\n\n句子的编号必须递增；拆解、翻译、提示可以只写其中几项。</string>
+    <string name="analysis_format_fill">填入示例</string>
+    <string name="analysis_import_label">解析文本</string>
+    <string name="analysis_import_hint">在这里粘贴“英语短文 + 逐句解析”的文本…</string>
+    <string name="analysis_recognized_count">%1$d 句 · 原文 %2$d 词</string>
+    <string name="analysis_not_recognized">未识别到解析结构</string>
+    <string name="analysis_too_long">内容过长</string>
+    <string name="analysis_detected">已识别为句子解析</string>
+    <string name="analysis_parse_error">没有找到完整的解析结构。请按示例检查：英语短文、#### 1. 原句、逐词拆解、中文翻译和语法提示。</string>
+    <string name="analysis_parse_failed">解析内容读取失败，请重新导入</string>
     <string name="title_label">标题</string>
     <string name="title_hint">可选，留空会从正文自动生成</string>
     <string name="passage_label">英文短文</string>
@@ -48,8 +66,9 @@
     <string name="import_paste">粘贴</string>
     <string name="import_txt">导入 TXT</string>
     <string name="import_sample">填入示例</string>
+    <string name="sample_loaded">已填入示例</string>
     <string name="import_save">保存到书架</string>
-    <string name="import_privacy">短文只保存在这台设备上，不会上传。支持 .txt 文本文件。</string>
+    <string name="import_privacy">短文和解析只保存在这台设备上，不会上传。支持 .txt 文本文件。</string>
     <string name="word_count">%1$d 词</string>
     <string name="word_count_zero">0 词</string>
     <string name="pasted">已粘贴剪贴板内容</string>
@@ -77,7 +96,7 @@
     <string name="reader_end">读到这里了</string>
     <string name="reader_end_sub">每一个点开的词，都算数。</string>
     <string name="reader_font_size">调整字号</string>
-    <string name="share_article">分享短文</string>
+    <string name="share_article">分享内容</string>
     <string name="font_size_title">阅读字号</string>
     <string name="font_size_preview">A quiet word can open a whole world.</string>
     <string name="font_size_small">小</string>
@@ -89,6 +108,23 @@
     <string name="about_dictionary_title">关于离线词库</string>
     <string name="about_dictionary_text">拾词内置约 40 万条英文词条，无需联网即可查询。\n\n词典数据来自 ECDICT（MIT License），英文释义源自 WordNet 等公开词典数据；语音由设备内置的英文 TTS 引擎朗读。\n\n词库在首次查词时会自动准备，之后完全离线可用。</string>
     <string name="dictionary_credit">离线词库 · ECDICT</string>
+
+    <string name="analysis_eyebrow">SENTENCE BREAKDOWN</string>
+    <string name="analysis_meta">解析 %1$d 句 · 原文 %2$d 词 · %3$s</string>
+    <string name="analysis_source_label">英语短文</string>
+    <string name="analysis_breakdown_label">逐词 / 短语拆解</string>
+    <string name="analysis_translation_label">中文翻译</string>
+    <string name="analysis_grammar_label">语法与用法提示</string>
+    <string name="analysis_section_title">逐句解析</string>
+    <string name="analysis_section_count">共 %1$d 句</string>
+    <string name="analysis_sentence_label">SENTENCE %1$s</string>
+    <string name="analysis_sentence_number">第 %1$d 句</string>
+    <string name="analysis_speak_source">朗读英语短文</string>
+    <string name="analysis_speak_sentence">朗读第 %1$d 句</string>
+    <string name="analysis_tip">轻点原文或原句中的单词查词；每一句都按原句、拆解、翻译和用法展开。</string>
+    <string name="analysis_end">解析到这里了</string>
+    <string name="analysis_end_sub">把句子拆开，语法就不再抽象。</string>
+    <string name="analysis_share">分享解析</string>
 
     <string name="wordbook_title">生词本</string>
     <string name="wordbook_eyebrow">MY WORDS</string>
@@ -158,5 +194,5 @@
     <string name="close">关闭</string>
     <string name="back">返回</string>
     <string name="share">分享</string>
-    <string name="share_chooser">分享短文</string>
+    <string name="share_chooser">分享内容</string>
 </resources>

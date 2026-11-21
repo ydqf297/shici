@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import com.shici.reader.SampleContent;
 import com.shici.reader.model.Article;
 import com.shici.reader.model.SavedWord;
+import com.shici.reader.util.WordUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,7 +24,7 @@ import java.util.List;
 public final class AppDatabase extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "shici.db";
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 2;
 
     private static volatile AppDatabase instance;
 
@@ -55,7 +56,10 @@ public final class AppDatabase extends SQLiteOpenHelper {
                 + "title TEXT NOT NULL,"
                 + "body TEXT NOT NULL,"
                 + "created_at INTEGER NOT NULL,"
-                + "is_sample INTEGER NOT NULL DEFAULT 0)");
+                + "is_sample INTEGER NOT NULL DEFAULT 0,"
+                + "kind INTEGER NOT NULL DEFAULT 0,"
+                + "source_text TEXT NOT NULL DEFAULT '',"
+                + "word_count INTEGER NOT NULL DEFAULT 0)");
 
         db.execSQL("CREATE TABLE saved_words ("
                 + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -75,27 +79,30 @@ public final class AppDatabase extends SQLiteOpenHelper {
         values.put("body", SampleContent.BODY);
         values.put("created_at", System.currentTimeMillis() - 60_000L);
         values.put("is_sample", 1);
+        values.put("kind", Article.KIND_READING);
+        values.put("source_text", SampleContent.BODY);
+        values.put("word_count", WordUtils.countWords(SampleContent.BODY));
         db.insert("articles", null, values);
     }
 
     @Override
     public void onUpgrade(@NonNull SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Version 1 is the initial schema. Future migrations belong here.
+        if (oldVersion < 2) {
+            db.execSQL("ALTER TABLE articles ADD COLUMN kind INTEGER NOT NULL DEFAULT 0");
+            db.execSQL("ALTER TABLE articles ADD COLUMN source_text TEXT NOT NULL DEFAULT ''");
+            db.execSQL("ALTER TABLE articles ADD COLUMN word_count INTEGER NOT NULL DEFAULT 0");
+            db.execSQL("UPDATE articles SET source_text = body");
+        }
     }
 
     public List<Article> getArticles() {
         List<Article> result = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
         try (Cursor cursor = db.rawQuery(
-                "SELECT id, title, body, created_at, is_sample FROM articles "
-                        + "ORDER BY created_at DESC, id DESC", null)) {
+                "SELECT id, title, body, created_at, is_sample, kind, source_text, word_count "
+                        + "FROM articles ORDER BY created_at DESC, id DESC", null)) {
             while (cursor.moveToNext()) {
-                result.add(new Article(
-                        cursor.getLong(0),
-                        cursor.getString(1),
-                        cursor.getString(2),
-                        cursor.getLong(3),
-                        cursor.getInt(4) == 1));
+                result.add(readArticle(cursor));
             }
         }
         return result;
@@ -104,26 +111,43 @@ public final class AppDatabase extends SQLiteOpenHelper {
     public Article getArticle(long id) {
         SQLiteDatabase db = getReadableDatabase();
         try (Cursor cursor = db.rawQuery(
-                "SELECT id, title, body, created_at, is_sample FROM articles WHERE id = ?",
+                "SELECT id, title, body, created_at, is_sample, kind, source_text, word_count "
+                        + "FROM articles WHERE id = ?",
                 new String[]{String.valueOf(id)})) {
             if (cursor.moveToFirst()) {
-                return new Article(
-                        cursor.getLong(0),
-                        cursor.getString(1),
-                        cursor.getString(2),
-                        cursor.getLong(3),
-                        cursor.getInt(4) == 1);
+                return readArticle(cursor);
             }
         }
         return null;
     }
 
+    private Article readArticle(Cursor cursor) {
+        return new Article(
+                cursor.getLong(0),
+                cursor.getString(1),
+                cursor.getString(2),
+                cursor.getLong(3),
+                cursor.getInt(4) == 1,
+                cursor.getInt(5),
+                cursor.getString(6),
+                cursor.getInt(7));
+    }
+
     public long insertArticle(String title, String body, boolean sample) {
+        return insertArticle(title, body, sample, Article.KIND_READING,
+                body, WordUtils.countWords(body));
+    }
+
+    public long insertArticle(String title, String body, boolean sample, int kind,
+                              String sourceText, int wordCount) {
         ContentValues values = new ContentValues();
         values.put("title", title);
         values.put("body", body);
         values.put("created_at", System.currentTimeMillis());
         values.put("is_sample", sample ? 1 : 0);
+        values.put("kind", kind);
+        values.put("source_text", sourceText == null ? "" : sourceText);
+        values.put("word_count", Math.max(0, wordCount));
         return getWritableDatabase().insertOrThrow("articles", null, values);
     }
 

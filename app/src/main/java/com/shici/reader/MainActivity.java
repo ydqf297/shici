@@ -94,7 +94,8 @@ public class MainActivity extends BaseActivity {
             item.tvIndex.setText(String.format(Locale.CHINA, "%02d", i + 1));
             item.tvTitle.setText(article.title);
 
-            String previewText = article.body.replace('\n', ' ').replaceAll("\\s+", " ").trim();
+            String previewText = article.displaySource()
+                    .replace('\n', ' ').replaceAll("\\s+", " ").trim();
             String title = article.title.trim();
             if (!title.isEmpty() && previewText.regionMatches(true, 0, title, 0, title.length())) {
                 int afterTitle = title.length();
@@ -113,7 +114,7 @@ public class MainActivity extends BaseActivity {
             }
 
             item.tvMeta.setText(buildMeta(article));
-            item.getRoot().setOnClickListener(view -> openReader(article.id));
+            item.getRoot().setOnClickListener(view -> openArticle(article));
             View.OnClickListener menuClick = view -> showArticleMenu(view, article);
             item.btnMore.setOnClickListener(menuClick);
             item.getRoot().setOnLongClickListener(view -> {
@@ -127,6 +128,16 @@ public class MainActivity extends BaseActivity {
 
     private CharSequence buildMeta(Article article) {
         SpannableStringBuilder meta = new SpannableStringBuilder();
+        if (article.isAnalysis()) {
+            int start = meta.length();
+            meta.append(getString(R.string.analysis_badge));
+            meta.setSpan(new ForegroundColorSpan(
+                            ContextCompat.getColor(this, R.color.amber)),
+                    start, meta.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            meta.setSpan(new StyleSpan(Typeface.BOLD),
+                    start, meta.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            meta.append("   ·   ");
+        }
         if (article.sample) {
             int start = meta.length();
             meta.append(getString(R.string.sample_badge));
@@ -137,7 +148,7 @@ public class MainActivity extends BaseActivity {
                     start, meta.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
             meta.append("   ·   ");
         }
-        meta.append(getString(R.string.word_count, WordUtils.countWords(article.body)));
+        meta.append(getString(R.string.word_count, article.effectiveWordCount()));
         meta.append("   ·   ");
         meta.append(WordUtils.formatDate(article.createdAt));
         return meta;
@@ -184,6 +195,16 @@ public class MainActivity extends BaseActivity {
         Intent intent = new Intent(this, ReaderActivity.class);
         intent.putExtra(ReaderActivity.EXTRA_ARTICLE_ID, articleId);
         openActivity(intent);
+    }
+
+    private void openArticle(Article article) {
+        if (article.isAnalysis()) {
+            Intent intent = new Intent(this, AnalysisActivity.class);
+            intent.putExtra(AnalysisActivity.EXTRA_ARTICLE_ID, article.id);
+            openActivity(intent);
+        } else {
+            openReader(article.id);
+        }
     }
 
     private void addSampleAndRead() {

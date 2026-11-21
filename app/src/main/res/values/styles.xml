@@ -105,4 +105,18 @@
         <item name="android:letterSpacing">0</item>
     </style>
 
+    <style name="TextAppearance.Shici.AnalysisLabel" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.14</item>
+        <item name="android:textColor">@color/green_dark</item>
+    </style>
+
+    <style name="TextAppearance.Shici.AnalysisMicro" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.14</item>
+        <item name="android:textColor">@color/ink_tertiary</item>
+    </style>
+
 </resources>
