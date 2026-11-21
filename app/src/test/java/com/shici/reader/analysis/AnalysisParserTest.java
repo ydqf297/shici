@@ -103,6 +103,18 @@ public class AnalysisParserTest {
     }
 
     @Test
+    public void acceptsAnOmittedAnalysisHeading() throws Exception {
+        String text =
+                "### 英语短文\nA short sentence.\n"
+                + "#### 1. A short sentence.\n"
+                + "**中文翻译**：一个短句。\n";
+        AnalysisDocument document = AnalysisParser.parse(text);
+        assertEquals("A short sentence.", document.source);
+        assertEquals(1, document.sentenceCount());
+        assertEquals("一个短句。", document.sentences.get(0).translation);
+    }
+
+    @Test
     public void extractsOnlyTheChineseGlossFromMultipleParentheses() throws Exception {
         String text =
                 "### 英语短文\nWe process data quickly.\n"

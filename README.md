@@ -97,15 +97,15 @@ developer usually plays a key role in this developmental stage.
 
 ## 直接安装
 
-推荐从 [GitHub Releases](https://github.com/ydqf297/shici/releases/latest) 下载 APK，也可以直接下载仓库中的 [dist/ShiCi-1.1.0.apk](dist/ShiCi-1.1.0.apk)。校验值见 `dist/SHA256SUMS.txt`。
+推荐从 [GitHub Releases](https://github.com/ydqf297/shici/releases/latest) 下载 APK，也可以直接下载仓库中的 [dist/ShiCi-1.1.1.apk](dist/ShiCi-1.1.1.apk)。校验值见 `dist/SHA256SUMS.txt`。
 
 ```text
-6610e2ae363431b08f530a8cc64eef3d4839b669e5ce29ef364d6f2dec05dfda  ShiCi-1.1.0.apk
+62b28a2aef915ebffa770eb11626f59a34d51956feaedb84f0ad4bad35a1ce09  ShiCi-1.1.1.apk
 ```
 
-`dist/ShiCi-1.1.0.apk` 是由开发者本地签名密钥签名的 release 包，可直接侧载安装。为了安全，签名私钥和 `keystore.properties` 没有上传到仓库。若你自行构建并希望覆盖升级这个版本，请使用同一签名密钥；否则 Gradle 会回退到 debug 签名，需要先卸载旧版再安装。
+`dist/ShiCi-1.1.1.apk` 是由开发者本地签名密钥签名的 release 包，可直接侧载安装。为了安全，签名私钥和 `keystore.properties` 没有上传到仓库。若你自行构建并希望覆盖升级这个版本，请使用同一签名密钥；否则 Gradle 会回退到 debug 签名，需要先卸载旧版再安装。
 
-已在 Android 15（MuMu 模拟器）上实际安装并验证：导入 / 点词查看详情 / 收藏 / 生词本搜索 / 深色模式 / 删除均正常；并验证了从 1.0.0 升级到 1.1.0 后旧文章仍能打开。首次点词时会把约 42 MB 的离线词典展开到应用私有目录，通常只需要很短的等待。
+已在 Android 15（MuMu 模拟器）上实际安装并验证：导入 / 点词查看详情 / 收藏 / 生词本搜索 / 深色模式 / 删除均正常；并验证了从 1.0.0 升级到 1.1.x 后旧文章仍能打开。首次点词时会把约 42 MB 的离线词典展开到应用私有目录，通常只需要很短的等待。
 
 ## 构建
 
@@ -167,7 +167,7 @@ python tools/build_dictionary.py
   - `body` 保留导入的原始 Markdown 文本；书架预览使用 `source_text`。
 - `saved_words`：收藏的单词、音标、释义、原文语境、来源文章和收藏时间。
 
-1.0.0 → 1.1.0 会自动执行数据库迁移，为旧文章补齐新字段；旧文章仍按普通短文打开。
+1.0.0 → 1.1.x 会自动执行数据库迁移，为旧文章补齐新字段；旧文章仍按普通短文打开。
 
 ## 目录
 
@@ -194,6 +194,11 @@ tools/build_dictionary.py
 ```
 
 ## 更新日志
+
+### 1.1.1
+
+- 修复省略 `### 解析` 标题时，第一句解析被跳过的问题。
+- 句子解析的其他功能与 1.1.0 相同。
 
 ### 1.1.0
 

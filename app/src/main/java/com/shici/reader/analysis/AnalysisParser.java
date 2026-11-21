@@ -82,14 +82,19 @@ public final class AnalysisParser {
         }
 
         int analysisStart;
+        int sentenceSearchStart;
         if (analysisHeading >= 0) {
             analysisStart = analysisHeading;
+            sentenceSearchStart = analysisHeading + 1;
         } else {
             List<SentenceStart> probe = findSentenceStarts(lines, 0);
             if (probe.isEmpty()) {
                 throw new AnalysisParseException("No numbered sentences or analysis heading");
             }
             analysisStart = probe.get(0).lineIndex;
+            // The first numbered heading doubles as the analysis boundary when
+            // the optional "### 解析" heading is omitted.
+            sentenceSearchStart = analysisStart;
         }
 
         int sourceEnd = analysisStart;
@@ -105,7 +110,7 @@ public final class AnalysisParser {
             throw new AnalysisParseException("Missing English passage");
         }
 
-        List<SentenceStart> starts = findSentenceStarts(lines, analysisStart + 1);
+        List<SentenceStart> starts = findSentenceStarts(lines, sentenceSearchStart);
         if (starts.isEmpty()) {
             throw new AnalysisParseException("No numbered sentences");
         }

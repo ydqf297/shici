@@ -1,1 +1,1 @@
-6610e2ae363431b08f530a8cc64eef3d4839b669e5ce29ef364d6f2dec05dfda  ShiCi-1.1.0.apk
+62b28a2aef915ebffa770eb11626f59a34d51956feaedb84f0ad4bad35a1ce09  ShiCi-1.1.1.apk
